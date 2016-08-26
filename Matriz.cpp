@@ -31,7 +31,7 @@ string Matriz::toString()const{
     {
         for (int j = 0; j < Columnas; ++j)
         {
-            ss<<M[i][j];
+            ss<<"\n"<<"|"<<M[i][j]<<"|";
         }
         ss<<"\n";
     }
@@ -51,7 +51,7 @@ const Matriz Matriz::operator+(Matriz& r){
     return MatrizSecundaria;
 }
 
-const Matriz Matriz::operator-=(Matriz& r){
+const Matriz Matriz::operator--(){
     Matriz MatrizSecundaria(Filas,Columnas);
     for (int i = 0; i <Filas ; ++i)
     {   
@@ -77,13 +77,9 @@ const Matriz Matriz::operator*(Matriz& r){
     Matriz MatrizSecundaria(Filas,Columnas);
     int Filas2=Filas,Columnas2=r.Columnas;
     for (int i=0;i<Filas;i++)
-
     {for (int j=0;j<Columnas2;j++)
-
        { MatrizSecundaria.M[i][j]=0;
-
          for (int k=0;k<Columnas;k++)
-
           {
             MatrizSecundaria.M[i][j]=MatrizSecundaria.M[i][j]+M[i][k]*r.M[k][j];
           }

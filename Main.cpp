@@ -13,9 +13,10 @@ using std::vector;
 using std::stringstream;
 
 int menu();
+int Coordenada();
 void ImprimirMatriz(int,int,int**);
 int main(int argc, char const *argv[]){
- int Opcion=0;
+int Opcion=0,Coor,Coor2;
  vector<Matriz> Lista;
  vector<Matriz> Resultados;
  do
@@ -34,45 +35,59 @@ int main(int argc, char const *argv[]){
  	}
  	if (Opcion==2)
  	{	
- 		Resultados.push_back(Lista.at(0)+Lista.at(1));
+ 		Coor=Coordenada();
+ 		Coor2=Coordenada();
+ 		Resultados.push_back(Lista.at(Coor)+Lista.at(Coor2));
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
  	}
  	if (Opcion==3)
  	{
- 		Resultados.push_back(Lista.at(1)-=Lista.at(1));
+ 		Coor=Coordenada();
+ 		Coor2=Coordenada();
+ 		Resultados.push_back(--Lista.at(Coor));
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
  	}
  	if (Opcion==4)
  	{
- 		Resultados.push_back(Lista.at(0)-Lista.at(1));
+ 		Coor=Coordenada();
+ 		Coor2=Coordenada();
+ 		Resultados.push_back(Lista.at(Coor)-Lista.at(Coor2));
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
  	}
  	if (Opcion==5)
  	{
- 		Resultados.push_back(Lista.at(0)*Lista.at(1));
+ 		Coor=Coordenada();
+ 		Coor2=Coordenada();
+ 		Resultados.push_back(Lista.at(Coor)*Lista.at(Coor2));
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
  	}
  	if (Opcion==6)
  	{
-	 	Resultados.push_back(Lista.at(0)());
+	 	Coor=Coordenada();
+ 	    Lista.at(Coor)();
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
  	}
  	if (Opcion==7)
  	{
- 		Lista.at(0)=Lista.at(1);
+ 		Coor=Coordenada();
+ 		Coor2=Coordenada();
+ 		Lista.at(Coor)=Lista.at(Coor2);
  	}
  	if (Opcion==8)
  	{
- 		Lista.at(0)!=Lista.at(1);
+ 		Coor=Coordenada();
+ 		Coor2=Coordenada();
+ 		Lista.at(Coor)!=Lista.at(Coor2);
  	}
  	if (Opcion==9)
  	{
- 		++Lista.at(0);
+ 		Coor=Coordenada();
+ 		++Lista.at(Coor);
  	}
  } while (Opcion!=10);
 }
@@ -105,3 +120,11 @@ void ImprimirMatriz(int Filas,int Columnas,int** Matriz){
 			cout<<"\n";
 	}
 }
+
+int Coordenada(){
+	int Coor=0;
+	cout<<"Ingrese la coordenada";
+	cin>>Coor;
+	return Coor;
+}
+

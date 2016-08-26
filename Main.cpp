@@ -58,9 +58,21 @@ int main(int argc, char const *argv[]){
  	}
  	if (Opcion==6)
  	{
-	 	Resultados.push_back(Lista.at(1)());
+	 	Resultados.push_back(Lista.at(0)());
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
+ 	}
+ 	if (Opcion==7)
+ 	{
+ 		Lista.at(0)=Lista.at(1);
+ 	}
+ 	if (Opcion==8)
+ 	{
+ 		Lista.at(0)!=Lista.at(1);
+ 	}
+ 	if (Opcion==9)
+ 	{
+ 		
  	}
  } while (Opcion!=10);
 }

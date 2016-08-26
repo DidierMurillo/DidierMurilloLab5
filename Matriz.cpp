@@ -108,7 +108,52 @@ const Matriz Matriz::operator()(){
         }
         Cont2++;
     }
+    return MatrizSecundaria;
 }
+const Matriz Matriz::operator=(Matriz& r){
+    bool Validacion=true;
+    for (int i = 0; i < Filas; ++i)
+    {
+        for (int j = 0; j < Columnas; ++j)
+        {
+            if(M[i][j]!=r.M[i][j]){
+                Validacion=true;
+            }else{
+                Validacion=false;
+                cout<<"La matrices son diferentes";
+                break;
+            }
+
+        }
+    }
+    cout<<"La matrices son iguales";
+}
+
+const Matriz Matriz::operator!=(Matriz& r){
+    bool Validacion=true;
+    for (int i = 0; i < Filas; ++i)
+    {
+        for (int j = 0; j < Columnas; ++j)
+        {
+            if(M[i][j]==r.M[i][j]){
+                Validacion=true;
+            }else{
+                Validacion=false;
+                cout<<"La matrices son diferentes";
+                break;
+            }
+
+        }
+    }
+    cout<<"La matrices son iguales";
+}
+
+const Matriz Matriz::operator/(Matriz& r){
+    
+    
+
+}
+
 
 Matriz::Matriz(int Fila,int Columna){
     this->Filas=Fila;

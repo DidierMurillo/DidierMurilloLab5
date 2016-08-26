@@ -20,5 +20,8 @@ class Matriz{
   	const Matriz operator+(Matriz& r);
 	  const Matriz operator-(Matriz& r);
 	  const Matriz operator*(Matriz& r);
+    const Matriz operator=(Matriz& r);
+    const Matriz operator!=(Matriz& r);
+    const Matriz operator/(Matriz& r);
 	 	int** getM();
 };

@@ -44,6 +44,12 @@ int main(int argc, char const *argv[]){
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
  	}
+ 	if (Opcion==4)
+ 	{
+ 		Resultados.push_back(Lista.at(0)-Lista.at(1));
+ 		cout<<"Resultado:";
+ 		cout<<Resultados.at(0);
+ 	}
  } while (Opcion!=10);
 }
 

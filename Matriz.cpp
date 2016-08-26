@@ -14,6 +14,7 @@ ostream& operator<<(ostream& out, const Matriz& r){
     out << r.toString();
     return out;
 }
+
 istream& operator>>(istream& in, Matriz& r){
    /* int num,den;
     in>>num;
@@ -32,12 +33,14 @@ string Matriz::toString()const{
         {
             ss<<M[i][j];
         }
+        ss<<"\n";
     }
     return ss.str();
 }
 
 const Matriz Matriz::operator+(Matriz& r){
     Matriz MatrizSecundaria(Filas,Columnas);
+
     for (int i = 0; i <Filas ; ++i)
     {   
         for (int j = 0; j <Columnas ; ++j)
@@ -45,15 +48,6 @@ const Matriz Matriz::operator+(Matriz& r){
             MatrizSecundaria.M[i][j]=M[i][j]+r.M[i][j];
         }
     }
-    for (int i = 0; i < Filas; ++i)
-    {
-        for (int j = 0; j < Columnas; ++j)
-        {
-            cout<<MatrizSecundaria.M[i][j];
-        }
-        cout<<"\n";
-    }
-
     return MatrizSecundaria;
 }
 
@@ -73,7 +67,7 @@ const Matriz& Matriz::operator()(Matriz& r){
 Matriz::Matriz(int Fila,int Columna){
     this->Filas=Fila;
     this->Columnas=Columna;
-    int* M[Filas];
+    int** M=new int*[Filas];
     for (int i = 0; i < Filas; ++i)
         {
             M[i]=new int[Columnas];
@@ -87,7 +81,9 @@ void  Matriz::Llenar(){
         for (int j = 0; j <Columnas; ++j)
         {
             M[i][j]=1;
+            cout<<M[i][j];
         }
+        //cout<<"\n";
     }
 }
 

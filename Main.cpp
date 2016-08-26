@@ -35,7 +35,7 @@ int main(int argc, char const *argv[]){
  	if (Opcion==2)
  	{
  		//Resultados.push_back(Lista.at(0)+Lista.at(1));
- 		cout<<Lista.at(0).toString();
+ 		cout<<Lista.at(0);
  	}
  } while (Opcion!=10);
 }

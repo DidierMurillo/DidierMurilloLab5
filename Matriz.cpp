@@ -51,16 +51,33 @@ const Matriz Matriz::operator+(Matriz& r){
     return MatrizSecundaria;
 }
 
-const Matriz& Matriz::operator-=(Matriz& r){
-    return *this;
+const Matriz Matriz::operator-=(Matriz&){
+    Matriz MatrizSecundaria(Filas,Columnas);
+    for (int i = 0; i <Filas ; ++i)
+    {   
+        for (int j = 0; j <Columnas ; ++j)
+        {
+            MatrizSecundaria.M[i][j]=M[i][j]*-1;
+        }
+    }
+    return MatrizSecundaria;
 }
 const Matriz Matriz::operator-(Matriz& r){
-    return *this;
+    Matriz MatrizSecundaria(Filas,Columnas);
+
+    for (int i = 0; i <Filas ; ++i)
+    {   
+        for (int j = 0; j <Columnas ; ++j)
+        {
+            MatrizSecundaria.M[i][j]=M[i][j]-r.M[i][j];
+        }
+    }
+    return MatrizSecundaria;
 }
 const Matriz Matriz::operator*(Matriz& r){
     return *this;
 }
-const Matriz& Matriz::operator()(Matriz& r){
+const Matriz Matriz::operator()(Matriz& r){
     return *this;
 }
 
@@ -81,7 +98,7 @@ void  Matriz::Llenar(){
         for (int j = 0; j <Columnas; ++j)
         {
             M[i][j]=1;
-            cout<<M[i][j];
+            //cout<<M[i][j];
         }
         //cout<<"\n";
     }

@@ -33,9 +33,16 @@ int main(int argc, char const *argv[]){
 		Lista.push_back(P);
  	}
  	if (Opcion==2)
+ 	{	
+ 		Resultados.push_back(Lista.at(0)+Lista.at(1));
+ 		cout<<"Resultado:";
+ 		cout<<Resultados.at(0);
+ 	}
+ 	if (Opcion==3)
  	{
- 		//Resultados.push_back(Lista.at(0)+Lista.at(1));
- 		cout<<Lista.at(0);
+ 		Resultados.push_back(Lista.at(1)-=Lista.at(1));
+ 		cout<<"Resultado:";
+ 		cout<<Resultados.at(0);
  	}
  } while (Opcion!=10);
 }

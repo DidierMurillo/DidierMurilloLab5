@@ -6,3 +6,6 @@ Main.o:	Main.cpp Matriz.h
  
 Matriz.o: Matriz.cpp Matriz.h
 	g++ -c Matriz.cpp 
+
+clean:
+	rm *.o Matriz

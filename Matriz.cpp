@@ -110,7 +110,7 @@ const Matriz Matriz::operator()(){
     }
     return MatrizSecundaria;
 }
-const Matriz Matriz::operator=(Matriz& r){
+    void Matriz::operator=(Matriz& r){
     bool Validacion=true;
     for (int i = 0; i < Filas; ++i)
     {
@@ -120,16 +120,16 @@ const Matriz Matriz::operator=(Matriz& r){
                 Validacion=true;
             }else{
                 Validacion=false;
-                cout<<"La matrices son diferentes";
-                break;
+                cout<<"La matrices son diferentes\n";
+                return;
             }
 
         }
     }
-    cout<<"La matrices son iguales";
+    cout<<"La matrices son iguales\n";
 }
 
-const Matriz Matriz::operator!=(Matriz& r){
+    void Matriz::operator!=(Matriz& r){
     bool Validacion=true;
     for (int i = 0; i < Filas; ++i)
     {
@@ -139,19 +139,26 @@ const Matriz Matriz::operator!=(Matriz& r){
                 Validacion=true;
             }else{
                 Validacion=false;
-                cout<<"La matrices son diferentes";
-                break;
+                cout<<"La matrices son diferentes\n";
+                return;
             }
 
         }
     }
-    cout<<"La matrices son iguales";
+    cout<<"La matrices son iguales\n";
 }
 
-const Matriz Matriz::operator/(Matriz& r){
+    void Matriz::operator++(){
+    int VDeterminante=0;
+    if(Filas==2){
+        VDeterminante=M[0][0]*M[1][1]-M[0][1]*M[1][0];
+    }else{
+        VDeterminante=M[0][0]*M[1][1]*M[2][2]+M[0][1]*M[1][2]*M[2][0]+
+        M[0][2]*M[1][0]*M[2][1]-M[0][2]*M[1][1]*M[2][0]-M[0][0]*
+        M[1][2]*M[2][1]-M[0][1]*M[1][0]*M[2][2];
+    }
+    cout<<"El determinante es:"<< VDeterminante<<"\n";
     
-    
-
 }
 
 

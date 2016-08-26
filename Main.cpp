@@ -72,7 +72,7 @@ int main(int argc, char const *argv[]){
  	}
  	if (Opcion==9)
  	{
- 		
+ 		++Lista.at(0);
  	}
  } while (Opcion!=10);
 }

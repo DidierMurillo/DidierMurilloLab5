@@ -79,7 +79,7 @@ int main(int argc, char const *argv[]){
 
 int menu(){
 	int seleccion=0;
-	while(seleccion <1 || seleccion >9){
+	while(seleccion <1 || seleccion >10){
 		cout<<"1) Crear una matriz "<<endl;
 		cout<<"2) Suma "<<endl;
 		cout<<"3) Matriz Negativa "<<endl;

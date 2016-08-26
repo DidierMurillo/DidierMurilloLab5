@@ -16,7 +16,7 @@ class Matriz{
     void Llenar();
     string toString()const;
     const Matriz operator-=(Matriz& r);
-	  const Matriz operator()(Matriz& r);
+	  const Matriz operator()();
   	const Matriz operator+(Matriz& r);
 	  const Matriz operator-(Matriz& r);
 	  const Matriz operator*(Matriz& r);

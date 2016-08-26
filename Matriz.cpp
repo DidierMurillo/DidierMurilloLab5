@@ -51,7 +51,7 @@ const Matriz Matriz::operator+(Matriz& r){
     return MatrizSecundaria;
 }
 
-const Matriz Matriz::operator-=(Matriz&){
+const Matriz Matriz::operator-=(Matriz& r){
     Matriz MatrizSecundaria(Filas,Columnas);
     for (int i = 0; i <Filas ; ++i)
     {   
@@ -95,8 +95,19 @@ const Matriz Matriz::operator*(Matriz& r){
 
 }
 
-const Matriz Matriz::operator()(Matriz& r){
-    return *this;
+const Matriz Matriz::operator()(){
+    int Cont2=0;
+    Matriz MatrizSecundaria(Filas,Columnas);
+    for (int i = 0; i < Filas; ++i)
+    {
+        int Cont=0;
+        for (int j = 0; j < Columnas; ++j)
+        {
+            MatrizSecundaria.M[i][j]=M[Cont][Cont2];
+            Cont++;
+        }
+        Cont2++;
+    }
 }
 
 Matriz::Matriz(int Fila,int Columna){
@@ -114,8 +125,9 @@ void  Matriz::Llenar(){
     for (int i = 0; i < Filas; ++i)
     {
         for (int j = 0; j <Columnas; ++j)
-        {
-            M[i][j]=1;
+        {   
+            cout<<"Ingrese el numero fila:"<<i<<"columa:"<<j<<"\n";
+            cin>>M[i][j];
             //cout<<M[i][j];
         }
         //cout<<"\n";

@@ -31,7 +31,7 @@ string Matriz::toString()const{
     {
         for (int j = 0; j < Columnas; ++j)
         {
-            ss<<"\n"<<"|"<<M[i][j]<<"|";
+            ss<<"|"<<M[i][j]<<"|";
         }
         ss<<"\n";
     }

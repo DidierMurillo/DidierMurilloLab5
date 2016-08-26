@@ -8,10 +8,11 @@ class Matriz{
   friend ostream& operator<<(ostream&, const Matriz&); 
   friend istream& operator>>(istream&, Matriz&);
   private:
-    int Filas;
-    int Columnas;
+    
   	public:
     int** M;  
+    int Filas;
+    int Columnas;
   	Matriz(int Fila,int Columna);
     void Llenar();
     string toString()const;

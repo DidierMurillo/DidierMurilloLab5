@@ -37,52 +37,82 @@ int Opcion=0,Coor,Coor2;
  	{	
  		Coor=Coordenada();
  		Coor2=Coordenada();
- 		Resultados.push_back(Lista.at(Coor)+Lista.at(Coor2));
- 		cout<<"Resultado:";
- 		cout<<Resultados.at(0);
+ 		if (Lista.at(Coor).Filas==Lista.at(Coor).Filas&&Lista.at(Coor2).Filas==Lista.at(Coor2).Filas)
+ 		{
+			 Resultados.push_back(Lista.at(Coor)+Lista.at(Coor2));
+ 			cout<<"Resultado:";
+ 			cout<<Resultados.at(0);
+ 			break;			
+ 		}else{
+ 			cout<<"Las matrices no son iguales no se pueden sumar";
+ 		}
+ 		
  	}
  	if (Opcion==3)
  	{
  		Coor=Coordenada();
- 		Coor2=Coordenada();
  		Resultados.push_back(--Lista.at(Coor));
  		cout<<"Resultado:";
  		cout<<Resultados.at(0);
+ 		break;
  	}
  	if (Opcion==4)
  	{
  		Coor=Coordenada();
  		Coor2=Coordenada();
- 		Resultados.push_back(Lista.at(Coor)-Lista.at(Coor2));
- 		cout<<"Resultado:";
- 		cout<<Resultados.at(0);
+ 		if (Lista.at(Coor).Filas==Lista.at(Coor).Filas&&Lista.at(Coor2).Filas==Lista.at(Coor2).Filas)
+ 		{
+			 Resultados.push_back(Lista.at(Coor)-Lista.at(Coor2));
+ 			cout<<"Resultado:";
+ 			cout<<Resultados.at(0);
+ 			break;			
+ 		}else{
+ 			cout<<"Las matrices no son iguales no se pueden sumar";
+ 		} 	
+ 		break;
  	}
  	if (Opcion==5)
  	{
  		Coor=Coordenada();
  		Coor2=Coordenada();
- 		Resultados.push_back(Lista.at(Coor)*Lista.at(Coor2));
- 		cout<<"Resultado:";
- 		cout<<Resultados.at(0);
+ 		if (Lista.at(Coor).Columnas==Lista.at(Coor).Filas)
+ 		{
+			 Resultados.push_back(Lista.at(Coor)*Lista.at(Coor2));
+ 			cout<<"Resultado:";
+ 			cout<<Resultados.at(0);
+ 			break;			
+ 		}else{
+ 			cout<<"Las matrices no son iguales no se pueden sumar";
+ 		}
+ 		break;
  	}
  	if (Opcion==6)
  	{
 	 	Coor=Coordenada();
  	    Lista.at(Coor)();
- 		cout<<"Resultado:";
- 		cout<<Resultados.at(0);
+ 	    if (Lista.at(Coor).Filas==Lista.at(Coor).Columnas)
+ 	    {
+ 	    	cout<<"Resultado:";
+ 			cout<<Resultados.at(0);
+ 			break;
+ 	    }else{
+ 	    	cout<<"La matriz debe ser cuadrada";
+ 	    }
+ 		
  	}
  	if (Opcion==7)
  	{
  		Coor=Coordenada();
  		Coor2=Coordenada();
  		Lista.at(Coor)=Lista.at(Coor2);
+ 		
  	}
  	if (Opcion==8)
  	{
  		Coor=Coordenada();
  		Coor2=Coordenada();
  		Lista.at(Coor)!=Lista.at(Coor2);
+
  	}
  	if (Opcion==9)
  	{
